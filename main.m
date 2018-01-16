@@ -28,4 +28,9 @@ dx2 = -2*x2;
 figure;
 quiver(x1,x2,dx1,dx2)
 
+%e)
+e = eig(A);
+
+%% Aufgabe 2
+
 
