@@ -33,4 +33,10 @@ e = eig(A);
 
 %% Aufgabe 2
 
+%c)
+%Überprüfung des Regelgesetzes
+
+K = place(A,B,[-4,-5]);
+Kberechnet = [20/b, 9/b-a/b];
+
 
