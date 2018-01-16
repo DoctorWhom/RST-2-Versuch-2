@@ -55,3 +55,7 @@ sgrid;
 
 sys = zpk([],lambda, 1);
 [Wn,damping] = damp(sys);
+
+%% Aufgabe 3.3
+test = ss([0,1;-1.5,3],[0;1],[1,1],0);
+[K, Kp, Ki] = PIKoeffizienten(test,[-3.1,-3.0,-2.9])
