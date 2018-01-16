@@ -26,7 +26,7 @@ dx1 = x2;
 dx2 = -2*x2;
 
 figure;
-quiver(x1,x2,dx1,dx2)
+quiver(x1,x2,dx1,dx2);
 
 %e)
 e = eig(A);
@@ -39,4 +39,7 @@ e = eig(A);
 K = place(A,B,[-4,-5]);
 Kberechnet = [20/b, 9/b-a/b];
 
+%e)
+
+f = -1/(C*(A + B*K)^-1 * B);
 
