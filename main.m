@@ -43,3 +43,15 @@ Kberechnet = [20/b, 9/b-a/b];
 
 f = -1/(C*(A + B*K)^-1 * B);
 
+%g)
+
+Re = [-4.9, -5.1, -5/2, -5/2, -2.9, -3.1, -3/2, -3/2, -0.4, -0.6];
+Im = [0,0, sqrt(3)*5/2, -sqrt(3)*5/2,0,0, sqrt(3)*3/2, -sqrt(3)*3/2,0,0];
+lambda = complex(Re, Im);
+
+figure;
+plot(lambda, 'o');
+sgrid;
+
+sys = zpk([],lambda, 1);
+[Wn,damping] = damp(sys);
