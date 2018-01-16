@@ -18,4 +18,14 @@ u = zeros (size(t));
 [y,t,x] = lsim(sigma, u, t, x0);
 
 plot(t,y,t, 2-10/a * (1-exp(-a*t)));
+legend('Simulierte Position', 'Berechnete Position');
+
+%d)
+[x1,x2] = meshgrid(-2:0.2:2);
+dx1 = x2;
+dx2 = -2*x2;
+
+figure;
+quiver(x1,x2,dx1,dx2)
+
 
