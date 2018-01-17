@@ -62,4 +62,19 @@ test = ss([0,1;-1.5,3],[0;1],[1,1],0);
 [~, ~, ~] = PIKoeffizienten(test,[-3.1,-3.0,-2.9]);
 
 %c)
-[K,Kp,Ki] = PIKoeffizienten(sigma, [-2.1,-2,-1.9]);
+pwunsch = [-2.1,-2,-1.9];
+[K,Kp,Ki] = PIKoeffizienten(sigma, pwunsch);
+
+%d)
+s = tf('s');
+cpi = Kp + Ki/s;
+s0 = zero(cpi);
+
+figure;
+pkplx = complex(pwunsch);
+s0kplx = complex(s0);
+plot(real(pkplx),imag(pkplx), 'x',real(s0kplx),imag(s0kplx),'o');
+
+%e)
+[K2, Kp2, Ki2] = PIKoeffizienten(sigma, pwunsch, -10);
+
