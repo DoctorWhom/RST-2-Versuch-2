@@ -78,3 +78,28 @@ plot(real(pkplx),imag(pkplx), 'x',real(s0kplx),imag(s0kplx),'o');
 %e)
 [K2, Kp2, Ki2] = PIKoeffizienten(sigma, pwunsch, -10);
 
+
+%% Aufgabe 3.4
+
+M = 25*pi;
+Tp = 10;
+t = 0:0.2:2*Tp;
+
+ystern = M/2 * (1 - cos(4*pi*t/Tp));
+dydx = 4*pi/Tp * sin(4*pi*t/Tp);
+d2ydx2 = (4*pi/Tp)^-2 * cos(4*pi*t/Tp);
+
+[x1stern,x2stern,ustern] = trajectorystates(t,ystern,dydx,d2ydx2);
+
+x1ber = ystern;
+x2ber = dydx;
+
+uber = 1/b * (a * M / 2 + (16*pi^2 / Tp^2 - a*M/2)*cos(4*pi*t/Tp));
+
+
+plot(t,x1stern, t, x1ber);
+figure;
+plot(t,x2stern, t, x2ber);
+figure;
+plot(t,ustern,t,uber);
+legend('u aus der Funktion', 'u analytisch berechnet');
