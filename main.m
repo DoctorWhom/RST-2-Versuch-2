@@ -57,5 +57,9 @@ sys = zpk([],lambda, 1);
 [Wn,damping] = damp(sys);
 
 %% Aufgabe 3.3
+%b)
 test = ss([0,1;-1.5,3],[0;1],[1,1],0);
-[K, Kp, Ki] = PIKoeffizienten(test,[-3.1,-3.0,-2.9])
+[~, ~, ~] = PIKoeffizienten(test,[-3.1,-3.0,-2.9]);
+
+%c)
+[K,Kp,Ki] = PIKoeffizienten(sigma, [-2.1,-2,-1.9]);
